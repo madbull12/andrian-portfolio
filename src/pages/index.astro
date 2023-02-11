@@ -1,11 +1,19 @@
 ---
 
+import BannerText from '../components/BannerText';
 import Cursor from '../components/Cursor';
+import TiltedBanner from '../components/TiltedBanner';
 import  MainLayout from '../layouts/MainLayout.astro'
 ---
 
 <MainLayout title="Andrian Lysander" description="My home page">
 	<Cursor client:load />
+	
+	<div class="h-screen flex items-center  px-16">
+		<!-- <TiltedBanner client:load /> -->
+		<BannerText client:load />
+	</div>
+	
 </MainLayout>
 
 
