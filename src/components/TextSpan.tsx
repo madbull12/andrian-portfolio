@@ -24,13 +24,11 @@ const TextSpan = ({ text }: { text: string }) => {
   return (
     <motion.span
       animate={controls}
-    //   whileHover={{ color:"red"}}
       onMouseOver={() => {
         if (!isPlaying) rubberBand();
       }}
       onAnimationComplete={() => setIsPlaying(false)}
-    //   className="text-gray-300 font-black pointer-events-none text-7xl"
-    //   whileHover={{ scale: 1.2 }}
+      className="text-white font-black cursor-default text-7xl"
     >
       {text}
     </motion.span>

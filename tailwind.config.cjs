@@ -4,5 +4,13 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		function({ addComponents,theme }) {
+			addComponents({
+				".animateGradient":{
+		
+				}
+			})
+		}
+	],
 }
