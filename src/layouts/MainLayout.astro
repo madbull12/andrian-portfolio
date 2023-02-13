@@ -1,17 +1,25 @@
 ---
-import Header from './Header.astro';
+import { AnimatePresence } from "framer-motion";
+import MenuSlide from "../components/MenuSlide";
+import Navigations from "../components/Navigations";
+import useSlideInMenu from "../zustand/useSlideInMenu";
+import Header from "./Header.astro";
 
 interface Props {
-    title:string;
-    description:string;
+  title: string;
+  description: string;
 }
-const { title,description } = Astro.props as Props;
+const { title, description } = Astro.props as Props;
 ---
 
 <html lang="en">
+  <Header title={title} description={description} />
 
-    <Header title={title} description={description} />
-	<body class="text-white bg-gradient-to-br from-gray-900 overflow-x-hidden to-[#0f0013] bg-no-repeat min-h-screen">
-		<slot />
-	</body>
+  <body
+    class="text-white bg-gradient-to-br from-gray-900 overflow-x-hidden to-[#0f0013] bg-no-repeat min-h-screen"
+  >
+    <Navigations client:load />
+    <slot />
+  <MenuSlide client:load /> 
+  </body>
 </html>
