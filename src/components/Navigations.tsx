@@ -1,31 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Slant as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import useSlideInMenu from "../zustand/useSlideInMenu";
+import DarkModeSwitch from "./DarkModeSwitch";
 const Navigations = () => {
-//   const [isOpen, setOpen] = useState(false);
-    const { isOpen,setOpen } = useSlideInMenu();
+  //   const [isOpen, setOpen] = useState(false);
+  const { isOpen, setOpen } = useSlideInMenu();
+  const [nameVisible, setNameVisible] = useState(false);
+
+  const nameVariants = {
+    hidden: {
+      x: -20,
+      opacity: 0,
+      transition:{
+        ease:"easeInOut",
+        duration:0.5
+      }
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition:{
+        ease:"easeInOut",
+        duration:0.5
+
+      }
+    },
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNameVisible((prev) => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="sticky backdrop-blur-md flex justify-between items-center bg-gray-600/30 border-gray-300 border-opacity-10 border rounded-xl top-12 z-50 max-w-xl mx-auto px-8 py-4">
+    <div className="sticky backdrop-blur-md flex justify-between items-center bg-gray-500/30 dark:bg-gray-600/30 border-gray-300 border-opacity-10 border rounded-xl top-12 z-50 max-w-xl mx-auto px-8 py-4">
       <div className="flex gap-x-2 items-center">
-        <span className="text-gray-300 font-bold text-xl">愛</span>
+        <span className="text-gray-900 dark:text-gray-300 font-bold text-xl">黄</span>
         <motion.span
-          initial={{
-            x: -50,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
-        //   transition={{ ease: "linear", duration: 2, repeat: Infinity }}
-          className="tracking-widest text-gray-300 uppercase text-xs font-semibold"
+          variants={nameVariants}
+          initial="hidden"
+          animate={nameVisible ? "visible" : "hidden"}
+          //   transition={{ ease: "linear", duration: 2, repeat: Infinity }}
+          className="tracking-widest text-gray-900 dark:text-gray-300 uppercase text-xs font-semibold"
         >
           Andrian
         </motion.span>
       </div>
+      <div className="flex items-center gap-x-2">
+        <DarkModeSwitch />
+        <Hamburger toggled={isOpen} toggle={setOpen} rounded />
 
-      <Hamburger toggled={isOpen} toggle={setOpen} rounded />
+      </div>
     </div>
   );
 };

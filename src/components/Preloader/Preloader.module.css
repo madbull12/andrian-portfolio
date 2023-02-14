@@ -1,0 +1,33 @@
+.preloaderBox,.preloaderLight {
+    margin-left: 1rem;
+    width: max-content;
+    height: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.preloaderBox::after,.preloaderBox::before,.preloaderLight::after,.preloaderLight::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.preloaderBox::before {
+    background-image: linear-gradient(180deg,#10101a 5%,rgba(16,16,26,0) 30%);
+}
+
+.preloaderBox::after {
+    background-image: linear-gradient(0deg,#10101a 5%,rgba(16,16,26,0) 30%);
+}
+.preloaderLight::before {
+    background-image: linear-gradient(180deg,#f1f1ff 5%,rgba(239, 239, 255, 0.459) 30%);
+}
+
+.preloaderLight::after {
+    background-image: linear-gradient(0deg,#f1f1ff 5%,rgba(239, 239, 255, 0.459) 30%);
+}

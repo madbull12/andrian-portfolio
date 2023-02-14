@@ -49,7 +49,6 @@ const MenuSlide = () => {
 
   const linkAnimation = {
     hover: {
-      color: "#a78bfa",
       scale: 1.1,
     },
     hidden: {
@@ -66,7 +65,7 @@ const MenuSlide = () => {
     <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
       {isOpen ? (
         <motion.aside
-          className="bg-black  min-w-full min-h-screen justify-center flex items-center top-0 fixed left-0"
+          className="bg-white dark:bg-black  min-w-full min-h-screen justify-center flex items-center top-0 fixed left-0"
           variants={variants}
           initial="hidden"
           exit="exit"
@@ -74,7 +73,7 @@ const MenuSlide = () => {
         >
             <VerticalText position="top-16 right-16" text="井の中の蛙大海を知らず" />
             <VerticalText position="bottom-16 left-16" text="あきらめないで" />
-          <div className=" gap-y-4 flex flex-col items-center">
+          <div className=" gap-y-4  flex flex-col items-center">
             <motion.p
               exit={{ opacity: 0, x: "-100vw",transition:{ duration:0.5 } }}
               initial={{ opacity: 0, x: -50 }}
@@ -88,7 +87,7 @@ const MenuSlide = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="flex items-center gap-x-2 text-4xl"
+              className="flex items-center gap-x-2 text-4xl "
             >
               <motion.a
                 variants={linkAnimation}
@@ -96,7 +95,7 @@ const MenuSlide = () => {
                 href="https://github.com/madbull12"
                 target="_blank"
               >
-                <AiOutlineGithub />
+                <AiOutlineGithub className="dark:text-white text-black" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -104,7 +103,7 @@ const MenuSlide = () => {
                 href="https://www.linkedin.com/in/andrian-lysander-6b0a05176/"
                 target="_blank"
               >
-                <AiFillLinkedin />
+                <AiFillLinkedin className="dark:text-white text-black" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -112,7 +111,7 @@ const MenuSlide = () => {
                 href="https://twitter.com/andrian12011"
                 target="_blank"
               >
-                <AiFillTwitterCircle />
+                <AiFillTwitterCircle className="dark:text-white text-black" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -120,7 +119,7 @@ const MenuSlide = () => {
                 href="mailto:huangandrian02@gmail.com"
                 target="_blank"
               >
-                <AiFillGoogleCircle />
+                <AiFillGoogleCircle className="dark:text-white text-black" />
               </motion.a>
             </motion.div>
           </div>

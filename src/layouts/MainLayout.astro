@@ -2,6 +2,7 @@
 import { AnimatePresence } from "framer-motion";
 import MenuSlide from "../components/MenuSlide";
 import Navigations from "../components/Navigations";
+import Preloader from "../components/Preloader/Preloader";
 import VerticalText from "../components/VerticalText";
 import useSlideInMenu from "../zustand/useSlideInMenu";
 import Header from "./Header.astro";
@@ -13,14 +14,15 @@ interface Props {
 const { title, description } = Astro.props as Props;
 ---
 
-<html lang="en">
+<html lang="en" class="dark scroll-smooth" >
   <Header title={title} description={description} />
 
   <body
-    class="text-white bg-gradient-to-br from-gray-900 overflow-x-hidden to-[#0f0013] bg-no-repeat min-h-screen"
+    class="text-gray-900 dark:text-gray-300 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 overflow-x-hidden dark:to-[#0f0013] bg-no-repeat min-h-screen"
   >
+    <Preloader client:load />
     <Navigations client:load />
     <slot />
-  <MenuSlide client:load /> 
+    <MenuSlide client:load />
   </body>
 </html>

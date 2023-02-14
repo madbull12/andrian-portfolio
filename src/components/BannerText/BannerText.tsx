@@ -13,8 +13,9 @@ const BannerText = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.5,
-        staggerChildren: 0.08,
+        delay: 2,
+        duration:2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -64,7 +65,8 @@ const BannerText = () => {
           initial="hidden"
           animate="visible"
           variants={sentence}
-          className="text-white font-black cursor-default text-7xl"
+      
+          className="text-gray-900  dark:text-white font-black cursor-default text-7xl"
         >
           {line1.split("").map((char, index) => (
             <TextSpan key={index} char={char} />

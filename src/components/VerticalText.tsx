@@ -46,7 +46,7 @@ const VerticalText = ({ text,position }: { text: string,position:string }) => {
           exit="exit"
           key="vertical"
           variants={sentence}
-          className={`text-white absolute font-bold ${position} text-sm tracking-widest`}
+          className={`dark:text-white text-black absolute font-bold ${position} text-sm tracking-widest`}
           style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
         >
           {text.split("").map((letter,i) => (

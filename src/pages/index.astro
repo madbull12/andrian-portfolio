@@ -3,6 +3,7 @@
 import BannerText from '../components/BannerText/BannerText';
 import Cursor from '../components/Cursor';
 import MenuSlide from '../components/MenuSlide';
+import ProjectSection from '../components/ProjectSection';
 import TiltedBanner from '../components/TiltedBanner';
 import  MainLayout from '../layouts/MainLayout.astro'
 ---
@@ -10,10 +11,16 @@ import  MainLayout from '../layouts/MainLayout.astro'
 <MainLayout title="Andrian Lysander" description="My home page">
 	<Cursor client:load />
 	
-	<div class="h-screen flex items-center  px-16">
+	<div class="min-h-screen flex  items-center px-16">
 		<!-- <TiltedBanner client:load /> -->
-		<BannerText client:load />
+		<div class="flex flex-col gap-y-4 items-start">
+			<BannerText client:load />
+			<a href="#projects" class="uppercase font-bold text-lg tracking-widest mt-16">View Projects</a>
+		</div>
+		
+
 	</div>
+	<ProjectSection client:load/>
 
 	
 </MainLayout>
