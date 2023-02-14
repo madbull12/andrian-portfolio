@@ -1,28 +1,34 @@
 ---
-
-import BannerText from '../components/BannerText/BannerText';
-import Cursor from '../components/Cursor';
-import MenuSlide from '../components/MenuSlide';
-import ProjectSection from '../components/ProjectSection';
-import TiltedBanner from '../components/TiltedBanner';
-import  MainLayout from '../layouts/MainLayout.astro'
+import BannerText from "../components/BannerText/BannerText";
+import Cursor from "../components/Cursor";
+import MenuSlide from "../components/MenuSlide";
+import ProjectSection from "../components/ProjectSection";
+import TiltedBanner from "../components/TiltedBanner";
+import MainLayout from "../layouts/MainLayout.astro";
+import About from "../components/About";
+import { motion } from "framer-motion";
 ---
 
 <MainLayout title="Andrian Lysander" description="My home page">
-	<Cursor client:load />
-	
-	<div class="min-h-screen flex  items-center px-16">
-		<!-- <TiltedBanner client:load /> -->
-		<div class="flex flex-col gap-y-4 items-start">
-			<BannerText client:load />
-			<a href="#projects" class="uppercase font-bold text-lg tracking-widest mt-16">View Projects</a>
-		</div>
-		
+  <Cursor client:load />
 
-	</div>
-	<ProjectSection client:load/>
-
-	
+  <div class="min-h-screen flex items-center">
+    <!-- <TiltedBanner client:load /> -->
+    <div class="flex flex-col gap-y-4 items-start">
+      <BannerText client:load />
+      <a
+        href="#projects"
+        class="uppercase font-bold text-lg tracking-widest mt-16"
+        >View Projects</a
+      >
+    </div>
+  </div>
+  <About client:visible />
+  <ProjectSection client:load />
 </MainLayout>
 
-
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
