@@ -1,34 +1,27 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const sentence = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
-
 const Sentence = ({ text }: { text: string }) => {
-  return (
-    <motion.p variants={sentence} initial="hidden" animate="show">
-      {text}
-    </motion.p>
-  );
+  return <motion.div variants={sentence}>{text}</motion.div>;
 };
 
 const About = () => {
   const variants = {
     hidden: {
       opacity: 0,
-      x: -100,
     },
     visible: {
       opacity: 1,
-      x: 0,
       transition: {
         // duration: 0.3,
         // ease: "easeInOut",
         // type: "spring",
         // stiffness: 90,
-        staggerChildren: 0.5,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -38,13 +31,11 @@ const About = () => {
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      //   viewport={{ once: true }}
-
+      exit="hidden"
       className="space-y-6 text-sm font-semibold dark:text-gray-100 text-gray-900"
     >
       <motion.h1
-        initial="hidden"
-        animate="show"
+    
         variants={sentence}
         className="font-bold text-2xl"
       >
