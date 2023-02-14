@@ -23,6 +23,7 @@ const BannerText = () => {
   const letters = "abcdefghijklmnopqrstuvwxyz";
   const [randomText, setRandomText] = useState("Andrian");
   const randomize = () => {
+    console.log("shit")
     let splittedValue;
     let iterations = 0;
     const interval = setInterval(() => {
@@ -42,7 +43,7 @@ const BannerText = () => {
       iterations += 1 / 3;
     }, 30);
   };
-    
+
   const letter = {
     hidden: {
       opacity: 0,
@@ -68,11 +69,13 @@ const BannerText = () => {
           {line1.split("").map((char, index) => (
             <TextSpan key={index} char={char} />
           ))}
-          {original.split("").map((char, index) => (
-            <motion.span variants={letter} onMouseOver={randomize} className={styles.gradient}>
-              {char}
-            </motion.span>
-          ))}
+          <motion.span onMouseOver={randomize}>
+            {randomText.split("").map((char, index) => (
+              <motion.span key={index} variants={letter} className={styles.gradient}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.span>
 
           <br />
 
