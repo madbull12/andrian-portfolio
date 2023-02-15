@@ -2,11 +2,14 @@
 import BannerText from "../components/BannerText/BannerText";
 import Cursor from "../components/Cursor";
 import MenuSlide from "../components/MenuSlide";
-import ProjectSection from "../components/ProjectSection";
 import TiltedBanner from "../components/TiltedBanner";
 import MainLayout from "../layouts/MainLayout.astro";
 import About from "../components/About";
 import { motion } from "framer-motion";
+import twitter from '../images/twitter.png'
+import { Image } from "@astrojs/image/components";
+// import ProjectComponent from "../components/ProjectComponent/ProjectComponent";
+import ProjectSection from "../components/ProjectSection.astro";
 ---
 
 <MainLayout title="Andrian Lysander" description="My home page">
@@ -23,8 +26,12 @@ import { motion } from "framer-motion";
       >
     </div>
   </div>
-  <About client:visible />
-  <ProjectSection client:load />
+  <div class="min-h-screen">
+    <About client:visible />
+    <ProjectSection client:load />
+  </div>
+
+
 </MainLayout>
 
 <script>

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const sentence = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 const Sentence = ({ text }: { text: string }) => {
   return <motion.div variants={sentence}>{text}</motion.div>;
@@ -21,7 +21,7 @@ const About = () => {
         // ease: "easeInOut",
         // type: "spring",
         // stiffness: 90,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -32,7 +32,7 @@ const About = () => {
       initial="hidden"
       whileInView="visible"
       exit="hidden"
-      className="space-y-6 text-sm font-semibold dark:text-gray-100 text-gray-900"
+      className="space-y-6  py-6 text-base  font-semibold dark:text-gray-100 text-gray-900"
     >
       <motion.h1
     
