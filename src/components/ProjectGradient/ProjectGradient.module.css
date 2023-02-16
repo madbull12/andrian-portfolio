@@ -1,30 +1,76 @@
-.glow::before, .glow::after {
-    content:"";
-    position:absolute;
-    left:-2px;
-    top:-2px;
-    background: linear-gradient(45deg,#e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,#ff0099,#6e0dd0,#ff3300,#099fff,);
-    background-size:400%;
-    width:calc(100% + 5px);
-    height:calc(100% + 5px);
-    z-index:-1;
-    animation:animate 20s linear infinite;
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #e6fb04,
+    #ff6600,
+    #00ff66,
+    #00ffff,
+    #ff00ff,
+    #ff0099,
+    #6e0dd0,
+    #ff3300,
+    #099fff
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 50s linear infinite;
 }
 
 @keyframes animate {
-    0% {
-        background-position: 0 0;
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
 
-    }
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .glow::after {
-    filter:blur(40px)
+  filter: blur(10px);
 }
+
+.neumorphism {
+  box-shadow: 32px 32px 45px #bebebe, -32px -32px 45px #ffffff;
+}
+
+.neumorphismDark {
+  box-shadow: 17px 17px 34px #08060e, -17px -17px 34px #18112a;
+}
+
+.neumorphism,
+.neumorphismDark {
+  border-radius: 38px;
+}
+
+.neumorphismBtn{
+  display: block;
+
+  font-weight: bold;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 18px;
+
+  padding: 8px;
+}
+
+.neumorphismDark {
+  background: #191923;
+  box-shadow: 11px 11px 22px #12121a, -11px -11px 22px #20202c;
+}
+
+.neumorphismLight {
+  background: #e5e7eb;
+  box-shadow: 11px 11px 22px #a7a9ac, -11px -11px 22px #ffffff;
+}
+
