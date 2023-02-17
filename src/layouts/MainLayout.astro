@@ -1,5 +1,6 @@
 ---
 import { AnimatePresence } from "framer-motion";
+import Cursor from "../components/Cursor";
 import MenuSlide from "../components/MenuSlide";
 import Navigations from "../components/Navigations";
 import Preloader from "../components/Preloader/Preloader";
@@ -14,12 +15,14 @@ interface Props {
 const { title, description } = Astro.props as Props;
 ---
 
-<html lang="en" class="dark scroll-smooth" >
+<html lang="en" class="dark scroll-smooth">
   <Header title={title} description={description} />
 
   <body
     class="text-gray-900 px-32 dark:text-gray-300 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-[#1f1f2b] overflow-x-hidden dark:to-[#191923] bg-no-repeat min-h-screen"
   >
+    <Cursor client:load />
+
     <Preloader client:load />
     <Navigations client:load />
     <slot />

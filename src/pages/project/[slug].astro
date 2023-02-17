@@ -1,0 +1,28 @@
+---
+import Cursor from "../../components/Cursor";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+
+export const getStaticPaths = async () => {
+  const projects = await Astro.glob("../../content/**/*.md");
+
+  return projects.map((project) => ({
+    params: {
+      slug: project.frontmatter.slug,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+
+
+const { Content } = Astro.props.project
+
+const { slug } = Astro.params
+
+---
+<ProjectLayout>
+   <Content  /> 
+   <h1>{Astro.props.project.frontmatter.title}</h1>
+</ProjectLayout>

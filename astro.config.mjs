@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-// https://astro.build/config
+import mdx from '@astrojs/mdx';
 
+// https://astro.build/config
 // https://astro.build/config
 import react from "@astrojs/react";
 
@@ -10,5 +11,8 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), image()]
+  integrations: [mdx(),tailwind(), react(), image()],
+  // markdown:{
+  //   remarkPlugins: [remarkToc, rehypeAccessibleEmojis]
+  // }
 });
