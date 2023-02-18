@@ -6,9 +6,10 @@ interface IProps {
   website: string;
   desc: string;
   technologies: string[];
+  slug:string;
 }
 
-const ProjectGradient = ({ title, website, desc, technologies }: IProps) => {
+const ProjectGradient = ({ title, website, desc, technologies,slug }: IProps) => {
   const variants = {
     hidden: {
       opacity: 0,
@@ -46,7 +47,7 @@ const ProjectGradient = ({ title, website, desc, technologies }: IProps) => {
       <a href={website} target="_blank" className={`${styles.neumorphismBtn} dark:bg-[#191923] bg-[#e5e7eb] dark:shadow-btnDark shadow-btnLight`}>
         VISIT WEBSITE
       </a>
-      <a href={website} target="_blank" className={`${styles.neumorphismBtn} dark:bg-[#191923] bg-[#e5e7eb] dark:shadow-btnDark shadow-btnLight`}>
+      <a href={`/project/${slug}`}  className={`${styles.neumorphismBtn} dark:bg-[#191923] bg-[#e5e7eb] dark:shadow-btnDark shadow-btnLight`}>
         READ MORE
       </a>
       </div>

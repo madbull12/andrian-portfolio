@@ -32,10 +32,25 @@ const ProjectSection = () => {
         className="grid grid-cols-3 gap-16"
       >
         <ProjectGradient
+          slug="twitter"
           website="https://t3-twitter-clone-nine.vercel.app/"
           title="Twitter clone"
           desc="a full stack Twitter-like app built using t3 stack, which is now fully operational and includes nearly all necessary features. The primary goal behind creating this imitation is to discover the capabilities of the t3 stack and its potential."
           technologies={["Next js", "React js", "Tailwind css", "tRPC", "Prisma", "Typescript"]}
+        />
+        <ProjectGradient
+          slug="pinterest"
+          website="https://pinterest-clone-prisma-graphql-phi.vercel.app/"
+          title="Pinterest clone"
+          desc="a full stack Pinterest-like app built with Graphql and Typescript."
+          technologies={["Next js", "React js", "Tailwind css", "Graphql", "Prisma", "Typescript", "Nexus"]}
+        />
+        <ProjectGradient
+          slug="youtube"
+          website="https://youtube-clone-next-js-inky.vercel.app/"
+          title="Youtube clone"
+          desc="a full stack Youtube-like app built with Next js and Typescript, the purpose of this project is to hone my skills in Next js."
+          technologies={["Next js", "React js", "Tailwind css", , "Prisma", "Typescript"]}
         />
       </motion.div>
     </div>

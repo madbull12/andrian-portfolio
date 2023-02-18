@@ -1,9 +1,12 @@
 ---
-import Cursor from "../../components/Cursor";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
+// import Cursor from "../../components/Cursor";
+import { motion } from "framer-motion";
+import ProjectDetails from "../../components/ProjectDetails";
+import MainLayout from "../../layouts/MainLayout.astro";
+// import ProjectLayout from "../../layouts/ProjectLayout.astro";
 
 export const getStaticPaths = async () => {
-  const projects = await Astro.glob("../../content/**/*.md");
+  const projects = await Astro.glob("../../content/*.md");
 
   return projects.map((project) => ({
     params: {
@@ -17,12 +20,12 @@ export const getStaticPaths = async () => {
 
 
 
-const { Content } = Astro.props.project
+const { Content,frontmatter } = Astro.props.project
 
 const { slug } = Astro.params
 
 ---
-<ProjectLayout>
+<MainLayout title={frontmatter.title} description={"shit"}>
    <Content  /> 
-   <h1>{Astro.props.project.frontmatter.title}</h1>
-</ProjectLayout>
+   <ProjectDetails client:load video={frontmatter.video} title={frontmatter.title} />
+</MainLayout>
