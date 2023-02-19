@@ -1,13 +1,16 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { AiFillBackward } from "react-icons/ai";
+import VideoPlayer from "./VideoPlayer/VideoPlayer";
 interface IProps {
   title: string;
   video: string;
 }
-const ProjectDetails = ({ title,video }: IProps) => {
+const ProjectDetails = ({ title, video }: IProps) => {
+  console.log(video);
   return (
-    <motion.div
+    <AnimatePresence>
+<motion.div
       className="py-24"
       initial={{ opacity: 0, x: -100 }}
       animate={{
@@ -17,18 +20,24 @@ const ProjectDetails = ({ title,video }: IProps) => {
       }}
     >
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-x-2">
+        <a href="/"className="flex items-center gap-x-2">
           <AiFillBackward className="text-2xl" />
-          <a href="/" className="text-2xl font-semibold">
+          <span  className="text-2xl font-semibold">
             Home
-          </a>
-        </div>
-        <h1 className="font-bold text-4xl">{title}</h1>
+          </span>
+        </a>
+        <h1 className="font-black text-5xl">{title}</h1>
       </div>
-      <video controls width="250">
-        <source src={video} type="video/webm" />
-      </video>
+      <div className="mt-4 flex gap-8 w-full ">
+        <VideoPlayer video={video} />
+        <div className="p-4 shadow-neumorphism dark:shadow-darkNeumorphism w-1/4">
+          <h3 className="font-bold text-2xl">About</h3>
+        </div>
+      </div>
     </motion.div>
+
+    </AnimatePresence>
+    
   );
 };
 

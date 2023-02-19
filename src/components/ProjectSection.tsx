@@ -50,7 +50,42 @@ const ProjectSection = () => {
           website="https://youtube-clone-next-js-inky.vercel.app/"
           title="Youtube clone"
           desc="a full stack Youtube-like app built with Next js and Typescript, the purpose of this project is to hone my skills in Next js."
-          technologies={["Next js", "React js", "Tailwind css", , "Prisma", "Typescript"]}
+          technologies={["Next js", "React js", "Tailwind css",  "Prisma", "Typescript"]}
+        />
+        <ProjectGradient
+          slug="ani-warudo"
+          website="https://ani-world-pi.vercel.app/"
+          title="Ani warudo"
+          desc="a full stack anime search app inspired by myanimelist built using next js."
+          technologies={["Next js", "React js", "Tailwind css",  "Prisma", "Typescript","jikan API"]}
+        />
+        <ProjectGradient
+          slug="game-store"
+          website="https://game-store-next-js-m9ct.vercel.app/"
+          title="Game store"
+          desc="beautifully built game store app using next js and trpc"
+          technologies={["Next js", "React js", "Tailwind css",  "Prisma","RAWG API", "Typescript","tRPC","Framer motion"]}
+        />
+        <ProjectGradient
+          slug="spotify"
+          website="https://game-store-next-js-m9ct.vercel.app/"
+          title="Spotify clone"
+          desc="A spotify clone app built using next js and typescript"
+          technologies={["Next js", "React js", "Tailwind css",  "Spotify API", "Typescript"]}
+        />
+        <ProjectGradient
+          slug="movie-app"
+          website="https://movie-app-blond-mu.vercel.app/"
+          title="Movie app"
+          desc="a movie app built using next js and typescript"
+          technologies={["Next js", "React js", "Tailwind css",  "TMDB API", "Typescript"]}
+        />
+        <ProjectGradient
+          slug="talkz"
+          website="https://movie-app-blond-mu.vercel.app/"
+          title="Talkz"
+          desc="a forum app inspired by reddit app built with next js, supabase and graphql"
+          technologies={["Next js", "React js", "Tailwind css","Stepzen","Graphql",  "Supabase", "Typescript"]}
         />
       </motion.div>
     </div>
