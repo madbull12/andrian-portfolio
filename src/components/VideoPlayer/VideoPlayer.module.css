@@ -3,13 +3,12 @@ video {
 }
 
 .videoWrapper {
-  width: 100%;
-  max-width: 700px;
   position: relative;
   display: flex;
   justify-content: center;
   overflow: hidden;
   border-radius: 20px;
+  height: 100%;
 }
 
 .videoWrapper:hover .controls {
@@ -50,7 +49,7 @@ video {
 }
 
 input[type="range"] {
-  -webkit-appearance: none !important;
+  /* -webkit-appearance: none !important; */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   height: 4px;
@@ -58,8 +57,9 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
+  /* -webkit-appearance: none !important; */
   cursor: pointer;
+  background:white;
   height: 6px;
 }
 
