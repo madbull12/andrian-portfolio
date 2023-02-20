@@ -27,5 +27,5 @@ const { slug } = Astro.params
 ---
 <MainLayout title={frontmatter.title} description={"shit"}>
    <Content  /> 
-   <ProjectDetails client:load stacks={frontmatter.stacks} video={frontmatter.video} title={frontmatter.title} about={frontmatter.about} />
+   <ProjectDetails client:load githubLink={frontmatter.githubLink} webLink={frontmatter.webLink} features={frontmatter.features} stacks={frontmatter.stacks} video={frontmatter.video} title={frontmatter.title} about={frontmatter.about} />
 </MainLayout>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ProjectGradient.module.css";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 interface IProps {
   title: string;
   website: string;
@@ -30,6 +30,7 @@ const ProjectGradient = ({ title, website, desc, technologies,slug }: IProps) =>
   return (
     <motion.div
       variants={variants}
+      whileHover={{ scale:1.1,transition:{ ease:"easeInOut",duration:.2 } }}
       className={`shadow-neumorphism space-y-4 flex-col dark:shadow-darkNeumorphism rounded-2xl bg-gray-200 p-8   relative dark:bg-[#191923] `}
     >
       <h1 className="font-bold text-gray-900 dark:text-white text-4xl">

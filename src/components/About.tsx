@@ -30,12 +30,14 @@ const About = () => {
     <motion.div
       variants={variants}
       initial="hidden"
+      viewport={{ once:true }}
+
       whileInView="visible"
       exit="hidden"
       className="space-y-6  py-6 text-base  font-semibold dark:text-gray-100 text-gray-900"
     >
       <motion.h1
-    
+
         variants={sentence}
         className="font-bold text-2xl"
       >

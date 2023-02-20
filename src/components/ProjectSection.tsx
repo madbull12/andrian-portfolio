@@ -30,6 +30,8 @@ const ProjectSection = () => {
         whileInView="visible"
         exit="hidden"
         className="grid grid-cols-3 gap-16"
+        viewport={{ once:true }}
+
       >
         <ProjectGradient
           slug="twitter"

@@ -1,16 +1,40 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AiFillBackward, AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import {
+  AiFillBackward,
+  AiFillGithub,
+  AiOutlineDown,
+  AiOutlineUp,
+} from "react-icons/ai";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
 import { BsArrowsExpand } from "react-icons/bs";
+import { IoMdBrowsers } from "react-icons/io";
 interface IProps {
   title: string;
   video: string;
   about: string;
   stacks: string[];
+  features: string[];
+  webLink:string;
+  githubLink:string;
 }
-const ProjectDetails = ({ title, video, about, stacks }: IProps) => {
+const ProjectDetails = ({ title, video, about, stacks, features,webLink,githubLink }: IProps) => {
   const [expandStacks, setExpandStacks] = useState(false);
+  const container = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        // duration: 0.3,
+        // ease: "easeInOut",
+        // type: "spring",
+        // stiffness: 90,
+        staggerChildren: 0.1,
+      },
+    },
+  };
   console.log(video);
   const stacksVariants = {
     hidden: {
@@ -25,6 +49,21 @@ const ProjectDetails = ({ title, video, about, stacks }: IProps) => {
         damping: 10,
         mass: 0.75,
         stiffness: 100,
+      },
+    },
+  };
+
+  const featuresVariants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.3,
       },
     },
   };
@@ -49,30 +88,57 @@ const ProjectDetails = ({ title, video, about, stacks }: IProps) => {
           x: 100,
         }}
       >
-        <div className="flex justify-between items-center">
-          <a href="/" className="flex items-center gap-x-2">
-            <AiFillBackward className="text-2xl" />
-            <span className="text-2xl font-semibold">Home</span>
-          </a>
+        <a href="/" className="flex items-center gap-x-2">
+          <AiFillBackward className="text-2xl" />
+          <span className="text-2xl font-semibold">Home</span>
+        </a>
+        <div className="flex justify-between items-center mt-4">
+          <h1 className="font-black text-2xl">Video overview</h1>
           <h1 className="font-black text-5xl">{title}</h1>
         </div>
         <div className="mt-4 flex gap-8 w-full ">
           <VideoPlayer video={video} />
           <div className="w-1/3 h-3/4">
-            <div className="p-4 shadow-neumorphism rounded-t-2xl dark:shadow-darkNeumorphism">
-              <h3 className="font-bold text-2xl mb-4">About</h3>
+            <div className="p-4 space-y-4 flex flex-col shadow-neumorphism rounded-t-2xl dark:shadow-darkNeumorphism">
+              <h3 className="font-bold text-2xl">About</h3>
               <p className="text-sm">{about}</p>
+              <div className="flex gap-x-12 items-center mx-4">
+                <motion.a
+                  whileHover={{ y: -10 }}
+                  className="w-0 flex flex-col items-center gap-y-2"
+                  target="_blank"
+                  href={githubLink}
+                >
+                  <AiFillGithub className="text-3xl " />
+                  <span className="text-[10px] font-semibold text-center">
+                    Github
+                  </span>
+                </motion.a>
+                <motion.a
+                  whileHover={{ y: -10 }}
+                  className="w-0 flex flex-col items-center gap-y-2"
+                  target="_blank"
+                  href={webLink}
+                >
+                  <IoMdBrowsers className="text-3xl " />
+                  <span className="text-[10px] font-semibold text-center">
+                    App
+                  </span>
+                </motion.a>
+              </div>
             </div>
-            <div className="bg-gray-400 cursor-pointer p-4 dark:bg-[#03001b] rounded-b-2xl overflow-hidden">
+            <div className="bg-gray-400 flex flex-col-reverse cursor-pointer p-4 dark:bg-[#03001b] rounded-b-2xl overflow-hidden">
               <button
                 onClick={() => setExpandStacks((prev) => !prev)}
-                className="flex items-center gap-x-2 w-full text-right ml-auto"
+                className="flex items-center gap-x-2 w-full text-right ml-auto "
               >
-                <span className="font-semibold">Stacks</span>
-                <motion.div animate={{ rotate:expandStacks ? 360 : 0 }}>
-                  {!expandStacks ? <AiOutlineDown className="animate-bounce" /> : <AiOutlineUp className="animate-bounce" />}
-                  
-                  
+                <span className="font-semibold text-xl">Tech Stacks</span>
+                <motion.div animate={{ rotate: expandStacks ? 360 : 0 }}>
+                  {!expandStacks ? (
+                    <AiOutlineDown className="animate-bounce" />
+                  ) : (
+                    <AiOutlineUp className="animate-bounce" />
+                  )}
                 </motion.div>
               </button>
               <AnimatePresence
@@ -98,6 +164,23 @@ const ProjectDetails = ({ title, video, about, stacks }: IProps) => {
               </AnimatePresence>
             </div>
           </div>
+        </div>
+        <div className="mt-4">
+          <h1 className="text-2xl font-bold">Features</h1>
+          <motion.ul
+            viewport={{ once: true }}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            exit="hidden"
+            className="space-y-2 mt-4"
+          >
+            {features.map((feature, i) => (
+              <motion.li variants={featuresVariants} key={i}>
+                {i + 1}. {feature}
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
       </motion.div>
     </AnimatePresence>
