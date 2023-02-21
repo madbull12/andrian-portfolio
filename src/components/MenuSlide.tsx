@@ -1,12 +1,12 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useSlideInMenu from "../zustand/useSlideInMenu";
-import {
-  AiOutlineGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiFillGoogleCircle,
-} from "react-icons/ai";
+// import {
+//   AiOutlineGithub,
+//   AiFillLinkedin,
+//   AiFillTwitterCircle,
+//   AiFillGoogleCircle,
+// } from "react-icons/ai";
 import VerticalText from "./VerticalText";
 const MenuSlide = () => {
   const { isOpen } = useSlideInMenu();
@@ -96,7 +96,7 @@ const MenuSlide = () => {
                 href="https://github.com/madbull12"
                 target="_blank"
               >
-                <AiOutlineGithub className="dark:text-white text-black" />
+                {/* <AiOutlineGithub className="dark:text-white text-black" /> */}
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -104,7 +104,7 @@ const MenuSlide = () => {
                 href="https://www.linkedin.com/in/andrian-lysander-6b0a05176/"
                 target="_blank"
               >
-                <AiFillLinkedin className="dark:text-white text-black" />
+                {/* <AiFillLinkedin className="dark:text-white text-black" /> */}
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -112,7 +112,7 @@ const MenuSlide = () => {
                 href="https://twitter.com/andrian12011"
                 target="_blank"
               >
-                <AiFillTwitterCircle className="dark:text-white text-black" />
+                {/* <AiFillTwitterCircle className="dark:text-white text-black" /> */}
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -120,7 +120,7 @@ const MenuSlide = () => {
                 href="mailto:huangandrian02@gmail.com"
                 target="_blank"
               >
-                <AiFillGoogleCircle className="dark:text-white text-black" />
+                {/* <AiFillGoogleCircle className="dark:text-white text-black" /> */}
               </motion.a>
             </motion.div>
           </div>
