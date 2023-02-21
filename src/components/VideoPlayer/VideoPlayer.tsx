@@ -1,14 +1,8 @@
+import { Icon } from "@iconify/react";
 import React, { useRef } from "react";
 import useVideoPlayer from "../../hooks/useVideoPlayer";
 import styles from "./VideoPlayer.module.css";
-import {
-  BsFillPlayFill,
-  BsFillPauseFill,
-  BsPlayBtnFill,
-  BsPauseBtnFill,
-  BsVolumeMuteFill,
-  BsFillVolumeUpFill,
-} from "react-icons/bs";
+
 
 const VideoPlayer = ({ video }: { video: string }) => {
   const videoElement = useRef(null);
@@ -29,9 +23,9 @@ const VideoPlayer = ({ video }: { video: string }) => {
         <div className={styles.actions}>
           <button onClick={togglePlay}>
             {!playerState.isPlaying ? (
-              <BsPlayBtnFill className="text-2xl bg-transparent" />
+              <Icon icon="material-symbols:play-arrow-sharp" className="text-2xl bg-transparent" />
             ) : (
-              <BsPauseBtnFill className="text-2xl bg-transparent" />
+              <Icon icon='material-symbols:pause-outline' className="text-2xl bg-transparent" />
             )}
           </button>
         </div>
@@ -73,7 +67,7 @@ const VideoPlayer = ({ video }: { video: string }) => {
           </option>
         </select>
         <button className={styles.muteBtn} onClick={toggleMute}>
-          {!playerState.isMuted ? <BsFillVolumeUpFill /> : <BsVolumeMuteFill />}
+          {!playerState.isMuted ? <Icon icon="material-symbols:volume-up" /> : <Icon icon="material-symbols:volume-mute" />}
         </button>
       </div>
     </div>
