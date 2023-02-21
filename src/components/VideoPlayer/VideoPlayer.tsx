@@ -16,7 +16,7 @@ const VideoPlayer = ({ video }: { video: string }) => {
   } = useVideoPlayer(videoElement);
   return (
     <div
-      className={`${styles.videoWrapper} w-2/3 shadow-neumorphism dark:shadow-darkNeumorphism`}
+      className={`${styles.videoWrapper} lg:w-2/3 w-full shadow-neumorphism dark:shadow-darkNeumorphism`}
     >
       <video src={video} ref={videoElement} onTimeUpdate={handleOnTimeUpdate} />
       <div className={styles.controls}>

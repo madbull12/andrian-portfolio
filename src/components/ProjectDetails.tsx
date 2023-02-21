@@ -98,15 +98,15 @@ const ProjectDetails = ({
           <span className="text-2xl font-semibold">Home</span>
         </a>
         <div className="flex justify-between items-center mt-4">
-          <h1 className="font-black text-2xl">Video overview</h1>
-          <h1 className="font-black text-5xl">{title}</h1>
+          <h1 className="font-black text-lg md:text-2xl">Video overview</h1>
+          <h1 className="font-black text-xl md:text-5xl">{title}</h1>
         </div>
-        <div className="mt-4 flex gap-8 w-full ">
+        <div className="mt-4 flex gap-8 w-full flex-col lg:flex-row ">
           <VideoPlayer video={video} />
-          <div className="w-1/3 h-3/4">
+          <div className="w-full lg:w-1/3 h-3/4">
             <div className="p-4 space-y-4 flex flex-col shadow-neumorphism rounded-t-2xl dark:shadow-darkNeumorphism">
               <h3 className="font-bold text-2xl">About</h3>
-              <p className="text-sm">{about}</p>
+              <p className="xs:text-sm text-xs">{about}</p>
               <div className="flex gap-x-12 items-center mx-4">
                 <motion.a
                   whileHover={{ y: -10 }}
@@ -180,7 +180,7 @@ const ProjectDetails = ({
             initial="hidden"
             whileInView="visible"
             exit="hidden"
-            className="space-y-2 mt-4"
+            className="space-y-2 mt-4 xs:text-sm sm:text-base text-xs"
           >
             {features.map((feature, i) => (
               <motion.li variants={featuresVariants} key={i}>
@@ -195,7 +195,7 @@ const ProjectDetails = ({
           viewport={{ once: true }}
         >
           <h1 className="text-2xl font-bold">Attention</h1>
-          <p>{attention}</p>
+          <p className="xs:text-sm sm:text-base text-xs">{attention}</p>
         </motion.div>
       </motion.div>
     </AnimatePresence>
