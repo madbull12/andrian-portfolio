@@ -15,10 +15,20 @@ interface IProps {
   about: string;
   stacks: string[];
   features: string[];
-  webLink:string;
-  githubLink:string;
+  webLink: string;
+  githubLink: string;
+  attention: string;
 }
-const ProjectDetails = ({ title, video, about, stacks, features,webLink,githubLink }: IProps) => {
+const ProjectDetails = ({
+  attention,
+  title,
+  video,
+  about,
+  stacks,
+  features,
+  webLink,
+  githubLink,
+}: IProps) => {
   const [expandStacks, setExpandStacks] = useState(false);
   const container = {
     hidden: {
@@ -165,7 +175,7 @@ const ProjectDetails = ({ title, video, about, stacks, features,webLink,githubLi
             </div>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="my-4">
           <h1 className="text-2xl font-bold">Features</h1>
           <motion.ul
             viewport={{ once: true }}
@@ -182,6 +192,14 @@ const ProjectDetails = ({ title, video, about, stacks, features,webLink,githubLi
             ))}
           </motion.ul>
         </div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-2xl font-bold">Attention</h1>
+          <p>{attention}</p>
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );

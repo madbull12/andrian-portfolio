@@ -1,12 +1,12 @@
 ---
 title: Youtube clone
 slug: youtube
-video: '/assets/pinterest.mp4'
-about:  a fullstack youtube app created using next js and typescript. 
+video: '/assets/youtube.mp4'
+about:  A fullstack app built using next js and typescript. The aim of this project is to enhance my proficiency in developing full-stack applications using Next.js and TypeScript.
 githubLink: https://github.com/madbull12/pinterest-clone-prisma-graphql
 webLink: https://pinterest-clone-prisma-graphql-phi.vercel.app/
-stacks: [React,Next js,Graphql,Typescript,Nexus,Supabase,Prisma,Apollo,Tailwind css]
-features: ["Authentication with Next Auth", "Users can create pins and comment", "Users can create boards and save pims inside","Users can edit and delete their pins", "Responsive design", "Categories functionality","Users can search for pins","Users can view similar pins"]
-
+stacks: [React,Next js,Typescript,Supabase,Prisma,Tailwind css]
+features: ["Authentication with Next Auth", "Users comment on videos", "Users can save videos to watch later", "Users can view their watch later videos ","Users can create playlists","Autocomplete search feature", "Trending page", "Users can filter videos by upload date, relevance etc ","Users can view channels"]
+attention: This application is unfinished and may require further development down the line. I will consider adding some features at a later time.
 ---
 

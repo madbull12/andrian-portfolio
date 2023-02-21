@@ -84,7 +84,7 @@ const ProjectSection = () => {
         />
         <ProjectGradient
           slug="talkz"
-          website="https://movie-app-blond-mu.vercel.app/"
+          website="https://talk-z-ten.vercel.app/"
           title="Talkz"
           desc="a forum app inspired by reddit app built with next js, supabase and graphql"
           technologies={["Next js", "React js", "Tailwind css","Stepzen","Graphql",  "Supabase", "Typescript"]}
