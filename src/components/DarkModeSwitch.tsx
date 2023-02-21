@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
+import  { Icon }  from "@iconify/react";
 const DarkModeSwitch = () => {
   const [isOn, setIsOn] = useState(() => {
     if (localStorage.getItem("theme") === "light") {
@@ -48,9 +48,9 @@ const DarkModeSwitch = () => {
       >
         <motion.div whileTap={{ rotate: 360 }}>
           {isOn ? (
-            <RiSunFill className="h-4 w-4 text-yellow-300" />
+            <Icon icon="ph:sun-dim-fill" className="h-4 w-4 text-yellow-300" />
           ) : (
-            <RiMoonClearFill className="h-4 w-4 text-slate-200" />
+            <Icon icon="ri:moon-clear-fill" className="h-4 w-4 text-slate-200" />
           )}
         </motion.div>
       </motion.div>

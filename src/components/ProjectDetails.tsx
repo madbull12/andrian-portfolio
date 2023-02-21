@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  AiFillBackward,
-  AiFillGithub,
-  AiOutlineDown,
-  AiOutlineUp,
-} from "react-icons/ai";
+
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
-import { BsArrowsExpand } from "react-icons/bs";
-import { IoMdBrowsers } from "react-icons/io";
+
+import { Icon } from "@iconify/react";
 interface IProps {
   title: string;
   video: string;
@@ -99,7 +94,7 @@ const ProjectDetails = ({
         }}
       >
         <a href="/" className="flex items-center gap-x-2">
-          <AiFillBackward className="text-2xl" />
+          <Icon icon="material-symbols:arrow-back-ios-new" className="text-2xl" />
           <span className="text-2xl font-semibold">Home</span>
         </a>
         <div className="flex justify-between items-center mt-4">
@@ -119,7 +114,7 @@ const ProjectDetails = ({
                   target="_blank"
                   href={githubLink}
                 >
-                  <AiFillGithub className="text-3xl " />
+                  <Icon icon="mdi:github" className="text-3xl" />
                   <span className="text-[10px] font-semibold text-center">
                     Github
                   </span>
@@ -130,7 +125,7 @@ const ProjectDetails = ({
                   target="_blank"
                   href={webLink}
                 >
-                  <IoMdBrowsers className="text-3xl " />
+                  <Icon icon="ph:browser-fill" className="text-3xl" />
                   <span className="text-[10px] font-semibold text-center">
                     App
                   </span>
@@ -145,9 +140,11 @@ const ProjectDetails = ({
                 <span className="font-semibold text-xl">Tech Stacks</span>
                 <motion.div animate={{ rotate: expandStacks ? 360 : 0 }}>
                   {!expandStacks ? (
-                    <AiOutlineDown className="animate-bounce" />
+                    <Icon icon="material-symbols:keyboard-arrow-down-sharp" className="animate-bounce" />
+
                   ) : (
-                    <AiOutlineUp className="animate-bounce" />
+                    <Icon icon="material-symbols:keyboard-arrow-up-sharp" className="animate-bounce" />
+
                   )}
                 </motion.div>
               </button>

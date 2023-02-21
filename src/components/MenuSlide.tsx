@@ -1,13 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useSlideInMenu from "../zustand/useSlideInMenu";
-import {
-  AiOutlineGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiFillGoogleCircle,
-} from "react-icons/ai";
-
+import { Icon } from "@iconify/react";
 import VerticalText from "./VerticalText";
 const MenuSlide = () => {
   const { isOpen } = useSlideInMenu();
@@ -34,18 +28,18 @@ const MenuSlide = () => {
   };
 
   const iconsAnimation = {
-    hidden: { opacity:0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      
+
       transition: {
         delay: 1.3,
         ease: "easeInOut",
 
-        duration:.5,
+        duration: 0.5,
       },
     },
-    exit: { opacity: 0, transition: { delay: 0.5,duration:.5 },x:"100vw" },
+    exit: { opacity: 0, transition: { delay: 0.5, duration: 0.5 }, x: "100vw" },
   };
 
   const linkAnimation = {
@@ -59,7 +53,6 @@ const MenuSlide = () => {
     visible: {
       opacity: 1,
       y: 0,
-      
     },
   };
 
@@ -73,11 +66,14 @@ const MenuSlide = () => {
           exit="exit"
           animate={isOpen ? "visible" : "hidden"}
         >
-            <VerticalText position="top-16 right-16" text="井の中の蛙大海を知らず" />
-            <VerticalText position="bottom-16 left-16" text="あきらめないで" />
+          <VerticalText
+            position="top-16 right-16"
+            text="井の中の蛙大海を知らず"
+          />
+          <VerticalText position="bottom-16 left-16" text="あきらめないで" />
           <div className=" gap-y-4  flex flex-col items-center">
             <motion.p
-              exit={{ opacity: 0, x: "-100vw",transition:{ duration:0.5 } }}
+              exit={{ opacity: 0, x: "-100vw", transition: { duration: 0.5 } }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0, transition: { delay: 1 } }}
               className="text-center font-bold uppercase tracking-widest"
@@ -97,7 +93,7 @@ const MenuSlide = () => {
                 href="https://github.com/madbull12"
                 target="_blank"
               >
-                <AiOutlineGithub className="dark:text-white text-black" />
+                <Icon icon="mdi:github" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -105,7 +101,7 @@ const MenuSlide = () => {
                 href="https://www.linkedin.com/in/andrian-lysander-6b0a05176/"
                 target="_blank"
               >
-                <AiFillLinkedin className="dark:text-white text-black" />
+                <Icon icon="mdi:linkedin" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -113,8 +109,7 @@ const MenuSlide = () => {
                 href="https://twitter.com/andrian12011"
                 target="_blank"
               >
-                <AiFillTwitterCircle className="dark:text-white text-black" />
-                {/* <Icon name="mdi:github" /> */}
+                <Icon icon="mdi:twitter" />
               </motion.a>
               <motion.a
                 variants={linkAnimation}
@@ -122,7 +117,7 @@ const MenuSlide = () => {
                 href="mailto:huangandrian02@gmail.com"
                 target="_blank"
               >
-                <AiFillGoogleCircle className="dark:text-white text-black" />
+                <Icon icon="mdi:gmail" />
               </motion.a>
             </motion.div>
           </div>

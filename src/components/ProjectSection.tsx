@@ -1,5 +1,4 @@
 // import ProjectComponent from "./ProjectComponent.astro";
-import { RiTwitchFill } from "react-icons/ri";
 import ProjectGradient from "./ProjectGradient/ProjectGradient";
 import React from "react";
 import { motion } from "framer-motion";
