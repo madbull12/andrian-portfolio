@@ -40,7 +40,7 @@ const Cursor = () => {
   });
 
   return (
-    <div>
+    <div className="lg:block hidden">
     <motion.div
       transition={{ type: "spring", mass: 3 }}
       animate={{ x: largeCirclePosition.x - 32 , y: largeCirclePosition.y - 32  }}

@@ -34,7 +34,7 @@ const About = () => {
 
       whileInView="visible"
       exit="hidden"
-      className="space-y-6  py-6 text-base  font-semibold dark:text-gray-100 text-gray-900"
+      className="space-y-6  py-2 md:py-6 text-base  font-semibold dark:text-gray-100 text-gray-900"
     >
       <motion.h1
 

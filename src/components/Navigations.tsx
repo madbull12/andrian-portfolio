@@ -36,9 +36,9 @@ const Navigations = () => {
   }, []);
 
   return (
-    <div className="sticky backdrop-blur-md flex justify-between items-center bg-gray-500/30 dark:bg-gray-600/30 border-gray-300 border-opacity-10 border rounded-xl top-12 z-50 max-w-xl mx-auto px-8 py-4">
+    <div className="sticky backdrop-blur-md flex justify-between items-center bg-gray-500/30 dark:bg-gray-600/30 border-gray-300 border-opacity-10 border rounded-xl top-12 z-50 max-w-xl mx-auto px-4 py-2 md:px-8 md:py-4">
       <div className="flex gap-x-2 items-center">
-        <span className="text-gray-900 dark:text-gray-300 font-bold text-xl">黄</span>
+        <span className="text-gray-900 dark:text-gray-300 font-bold text-base md:text-xl">黄</span>
         <motion.span
           variants={nameVariants}
           initial="hidden"

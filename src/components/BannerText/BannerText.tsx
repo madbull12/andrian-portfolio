@@ -66,7 +66,7 @@ const BannerText = () => {
           animate="visible"
           variants={sentence}
       
-          className="text-gray-900  dark:text-white font-black cursor-default text-7xl"
+          className="text-gray-900  dark:text-white text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black cursor-default lg:text-7xl"
         >
           {line1.split("").map((char, index) => (
             <TextSpan key={index} char={char} />

@@ -29,7 +29,7 @@ const ProjectSection = () => {
         initial="hidden"
         whileInView="visible"
         exit="hidden"
-        className="grid grid-cols-3 gap-16"
+        className="grid grid-cols-1 min-[900px]:grid-cols-2 xl:grid-cols-3 gap-16"
         viewport={{ once:true }}
 
       >
