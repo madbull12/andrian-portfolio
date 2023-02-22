@@ -94,12 +94,12 @@ const ProjectDetails = ({
         }}
       >
         <a href="/" className="flex items-center gap-x-2">
-          <Icon icon="material-symbols:arrow-back-ios-new" className="text-2xl" />
-          <span className="text-2xl font-semibold">Home</span>
+          <Icon icon="material-symbols:arrow-back-ios-new" className="text-xl" />
+          <span className="text-xl font-semibold">Home</span>
         </a>
         <div className="flex justify-between items-center mt-4">
-          <h1 className="font-black text-lg md:text-2xl">Video overview</h1>
-          <h1 className="font-black text-xl md:text-5xl">{title}</h1>
+          <h1 className="font-black text-lg md:text-xl lg:text-2xl">Video overview</h1>
+          <h1 className="font-black text-xl md:text-3xl lg:text-5xl">{title}</h1>
         </div>
         <div className="mt-4 flex gap-8 w-full flex-col lg:flex-row ">
           <VideoPlayer video={video} />

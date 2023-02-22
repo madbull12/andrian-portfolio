@@ -69,7 +69,7 @@ const ProjectSection = () => {
         />
         <ProjectGradient
           slug="spotify"
-          website="https://game-store-next-js-m9ct.vercel.app/"
+          website="https://spotify-app-rho.vercel.app/"
           title="Spotify clone"
           desc="A spotify clone app built using next js and typescript"
           technologies={["Next js", "React js", "Tailwind css",  "Spotify API", "Typescript"]}

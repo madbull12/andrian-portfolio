@@ -1,8 +1,14 @@
 
 import { useState, useEffect } from "react";
 
+interface VideoState {
+  isPlaying:boolean;
+  progress:number;
+  speed:number;
+  isMuted:boolean;
+}
 const useVideoPlayer = (videoElement) => {
-  const [playerState, setPlayerState] = useState({
+  const [playerState, setPlayerState] = useState<VideoState>({
     isPlaying: false,
     progress: 0,
     speed: 1,
@@ -32,6 +38,13 @@ const useVideoPlayer = (videoElement) => {
 
   const handleVideoProgress = (event) => {
     const manualChange = Number(event.target.value);
+    console.log(manualChange,videoElement.current.duration)
+    if (videoElement.current.duration === Infinity) {
+      videoElement.current.duration = 10000000;
+      setTimeout(() => {
+          videoElement.current.currentTime = 0; // to reset the time, so it starts at the beginning
+      }, 1000);
+  }
     videoElement.current.currentTime = (videoElement.current.duration / 100) * manualChange;
     setPlayerState({
       ...playerState,

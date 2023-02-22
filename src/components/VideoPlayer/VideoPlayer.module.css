@@ -20,9 +20,7 @@ video {
   align-items: center;
   justify-content: space-evenly;
   position: absolute;
-  bottom: 30px;
-  padding: 14px;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
   flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.25);

@@ -3,9 +3,8 @@ import React, { useRef } from "react";
 import useVideoPlayer from "../../hooks/useVideoPlayer";
 import styles from "./VideoPlayer.module.css";
 
-
 const VideoPlayer = ({ video }: { video: string }) => {
-  const videoElement = useRef(null);
+  const videoElement = useRef<HTMLVideoElement>(null);
   const {
     playerState,
     togglePlay,
@@ -14,26 +13,42 @@ const VideoPlayer = ({ video }: { video: string }) => {
     handleVideoSpeed,
     toggleMute,
   } = useVideoPlayer(videoElement);
+  console.log(playerState.speed)
   return (
     <div
-      className={`${styles.videoWrapper} lg:w-2/3 w-full shadow-neumorphism dark:shadow-darkNeumorphism`}
+      className={`${styles.videoWrapper} lg:w-2/3 h-52 w-full shadow-neumorphism dark:shadow-darkNeumorphism`}
     >
       <video src={video} ref={videoElement} onTimeUpdate={handleOnTimeUpdate} />
-      <div className={styles.controls}>
+      <div
+        className={`${styles.controls} p-1 lg:p-4 bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8`}
+      >
         <div className={styles.actions}>
           <button onClick={togglePlay}>
             {!playerState.isPlaying ? (
-              <Icon icon="material-symbols:play-arrow-sharp" className="text-2xl bg-transparent" />
+              <Icon
+                icon="material-symbols:play-arrow-sharp"
+                className="text-2xl bg-transparent"
+              />
             ) : (
-              <Icon icon='material-symbols:pause-outline' className="text-2xl bg-transparent" />
+              <Icon
+                icon="material-symbols:pause-outline"
+                className="text-2xl bg-transparent"
+              />
             )}
           </button>
         </div>
-        <input
+        {/* <input
           type="range"
           min="0"
           max="100"
           value={playerState.progress}
+          onChange={(e) => handleVideoProgress(e)}
+        /> */}
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={playerState.progress.toString()}
           onChange={(e) => handleVideoProgress(e)}
         />
         <select
@@ -67,7 +82,11 @@ const VideoPlayer = ({ video }: { video: string }) => {
           </option>
         </select>
         <button className={styles.muteBtn} onClick={toggleMute}>
-          {!playerState.isMuted ? <Icon icon="material-symbols:volume-up" /> : <Icon icon="material-symbols:volume-mute" />}
+          {!playerState.isMuted ? (
+            <Icon icon="material-symbols:volume-up" />
+          ) : (
+            <Icon icon="material-symbols:volume-mute" />
+          )}
         </button>
       </div>
     </div>
