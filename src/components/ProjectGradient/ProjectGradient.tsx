@@ -46,7 +46,7 @@ const ProjectGradient = ({ title, website, desc, technologies,slug }: IProps) =>
       <p className="text-sm text-gray-500">{desc}</p>
       <div className="space-y-6 text-gray-500">
       <a href={website} target="_blank" className={`${styles.neumorphismBtn} dark:bg-[#191923] bg-[#e5e7eb] dark:shadow-btnDark shadow-btnLight`}>
-        VISIT WEBSITE
+        LIVE DEMO 
       </a>
       <a href={`/project/${slug}`}  className={`${styles.neumorphismBtn} dark:bg-[#191923] bg-[#e5e7eb] dark:shadow-btnDark shadow-btnLight`}>
         READ MORE
