@@ -48,7 +48,7 @@ const ProjectSection = () => {
         />
         <ProjectGradient
           slug="youtube"
-          website="https://youtube-clone-next-js-inky.vercel.app/"
+          website="https://youtube-clone-next-js-bay.vercel.app/"
           title="Youtube clone"
           desc="a full stack Youtube-like app built with Next js and Typescript, the purpose of this project is to hone my skills in Next js."
           technologies={["Next js", "React js", "Tailwind css",  "Prisma", "Typescript"]}
